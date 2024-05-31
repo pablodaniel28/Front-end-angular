@@ -3,15 +3,22 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-branding',
   template: `
-    <div class="branding">
-      <a href="/">
-        <img
-          src="assets/images/logos/favicon.png"
-          class="align-middle m-2"
-          alt="logo"
-        />
-      </a>
+
+<div class="branding text-center">
+  <a href="/" class="d-inline-block align-middle text-decoration-none text-dark">
+    <img src="./assets/images/logos/favicon.png" class="m-2 align-middle" alt="logo" />
+    <div class="d-inline-block align-middle" style="margin-left: 12px;">
+      <span style="font-size: 18px; font-weight: bold; vertical-align: middle; color: black;">SISTEMA</span>
+      <br>
+      <span style="font-size: 18px; font-weight: bold; vertical-align: middle; color: black;">UNIVERSITARIO</span>
+
     </div>
+  </a>
+</div>
+
+
+
+
   `,
 })
 export class BrandingComponent {
