@@ -27,12 +27,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormsModule,
     ReactiveFormsModule,
     TablerIconsModule.pick(TablerIcons),
-    MatNativeDateModule,
-    AulaComponent  // Importa el componente como independiente
+    MatNativeDateModule
+      // Importa el componente como independiente
 
   ],
   declarations: [
     AppBadgeComponent,
+    AulaComponent,
     AppChipsComponent,
     AppListsComponent,
     AppMenuComponent,
