@@ -11,6 +11,7 @@ import * as TablerIcons from 'angular-tabler-icons/icons';
 import { UiComponentsRoutes } from './ui-components.routing';
 
 // ui components
+import { AulaComponent } from './aula/aula.component'; // Ajusta la ruta según sea necesario
 import { AppBadgeComponent } from './badge/badge.component';
 import { AppChipsComponent } from './chips/chips.component';
 import { AppListsComponent } from './lists/lists.component';
@@ -27,6 +28,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     ReactiveFormsModule,
     TablerIconsModule.pick(TablerIcons),
     MatNativeDateModule,
+    AulaComponent  // Importa el componente como independiente
+
   ],
   declarations: [
     AppBadgeComponent,
@@ -34,6 +37,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     AppListsComponent,
     AppMenuComponent,
     AppTooltipsComponent,
+
   ],
 })
 export class UicomponentsModule {}

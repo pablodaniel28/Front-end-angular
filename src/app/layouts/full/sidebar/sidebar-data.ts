@@ -10,32 +10,37 @@ export const navItems: NavItem[] = [
     route: '/dashboard',
   },
   {
-    navCap: 'Ui Components',
+    navCap: 'Administracion',
   },
   {
-    displayName: 'Badge',
+    displayName: 'Materia',
     iconName: 'rosette',
     route: '/ui-components/badge',
   },
   {
-    displayName: 'Chips',
+    displayName: 'Facultad',
     iconName: 'poker-chip',
     route: '/ui-components/chips',
   },
   {
-    displayName: 'Lists',
+    displayName: 'Carrera',
     iconName: 'list',
     route: '/ui-components/lists',
   },
   {
-    displayName: 'Menu',
+    displayName: 'Grupo',
     iconName: 'layout-navbar-expand',
     route: '/ui-components/menu',
   },
   {
-    displayName: 'Tooltips',
+    displayName: 'Docente',
     iconName: 'tooltip',
     route: '/ui-components/tooltips',
+  },
+  {
+    displayName: 'Aula',
+    iconName: 'tooltip',
+    route: '/ui-components/aula',
   },
   {
     navCap: 'Auth',
@@ -50,17 +55,17 @@ export const navItems: NavItem[] = [
     iconName: 'user-plus',
     route: '/authentication/register',
   },
-  {
-    navCap: 'Extra',
-  },
-  {
-    displayName: 'Icons',
-    iconName: 'mood-smile',
-    route: '/extra/icons',
-  },
-  {
-    displayName: 'Sample Page',
-    iconName: 'aperture',
-    route: '/extra/sample-page',
-  },
+  // {
+  //   navCap: 'Extra',
+  // },
+  // {
+  //   displayName: 'Icons',
+  //   iconName: 'mood-smile',
+  //   route: '/extra/icons',
+  // },
+  // {
+  //   displayName: 'Sample Page',
+  //   iconName: 'aperture',
+  //   route: '/extra/sample-page',
+  // },
 ];
