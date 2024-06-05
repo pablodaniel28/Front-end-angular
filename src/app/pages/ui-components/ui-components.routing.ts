@@ -7,6 +7,7 @@ import { AppListsComponent } from './lists/lists.component';
 import { AppMenuComponent } from './menu/menu.component';
 import { AppTooltipsComponent } from './tooltips/tooltips.component';
 import { AulaComponent } from './aula/aula.component'; // Ajusta la ruta según sea necesario
+import { AddMateriasComponent } from './add-materias/add-materias.component';
 
 
 export const UiComponentsRoutes: Routes = [
@@ -36,6 +37,10 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'aula',  // Nueva ruta para AulaComponent
         component: AulaComponent,
+      },
+      {
+        path: 'addmaterias',  // Nueva ruta para AulaComponent
+        component: AddMateriasComponent,
       },
     ],
   },
