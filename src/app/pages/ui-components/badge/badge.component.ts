@@ -10,6 +10,7 @@ import { Materias } from 'src/app/models/materias';
   selector: 'app-badge',
   templateUrl: './badge.component.html'
 })
+
 export class AppBadgeComponent implements OnInit {
 Materia: any;
 

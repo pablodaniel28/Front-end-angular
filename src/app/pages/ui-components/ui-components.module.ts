@@ -40,7 +40,7 @@ import { AddMateriasComponent } from './add-materias/add-materias.component';
     AppListsComponent,
     AppMenuComponent,
     AppTooltipsComponent,
-    // AddMateriasComponent
+    AddMateriasComponent
   ],
 })
 export class UicomponentsModule {}
