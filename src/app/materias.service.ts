@@ -56,4 +56,20 @@ async getAllMaterias(token: string): Promise<Materias[]> {
       throw error;
     }
   }
+
+  // Add this method
+  async getMateriaById(id: number, token: string): Promise<Materias | null> {
+    const url = `${this.BASE_URL}/materias/${id}`;
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    try {
+      const response = await this.http.get<Materias>(url, { headers }).toPromise();
+      return response || null;
+    } catch (error) {
+      console.error('Error fetching materia by ID:', error);
+      return null;
+    }
+  }
+
 }

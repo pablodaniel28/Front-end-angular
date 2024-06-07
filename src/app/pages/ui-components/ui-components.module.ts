@@ -19,6 +19,7 @@ import { AppMenuComponent } from './menu/menu.component';
 import { AppTooltipsComponent } from './tooltips/tooltips.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AddMateriasComponent } from './add-materias/add-materias.component';
+import { UpMateriasComponent } from './up-materias/up-materias.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { AddMateriasComponent } from './add-materias/add-materias.component';
     AppListsComponent,
     AppMenuComponent,
     AppTooltipsComponent,
-    AddMateriasComponent
+    AddMateriasComponent,
+
   ],
 })
 export class UicomponentsModule {}
