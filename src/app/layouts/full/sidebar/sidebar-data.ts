@@ -18,6 +18,11 @@ export const navItems: NavItem[] = [
     route: '/ui-components/badge',
   },
   {
+    displayName: 'Modulo',
+    iconName: 'layout-navbar-expand',
+    route: '/ui-components/modulos',
+  },
+  {
     displayName: 'Facultad',
     iconName: 'poker-chip',
     route: '/ui-components/chips',
@@ -40,7 +45,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Aula',
     iconName: 'tooltip',
-    route: '/ui-components/aula',
+    route: '/ui-components/aulas',
   },
   {
     navCap: 'Auth',
