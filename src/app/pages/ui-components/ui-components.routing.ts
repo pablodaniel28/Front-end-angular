@@ -15,6 +15,10 @@ import { ModulosComponent } from './modulos/modulos.component';
 import { UpModulosComponent } from './up-modulos/up-modulos.component';
 import { UpCarrerasComponent } from './up-carreras/up-carreras.component';
 import { SistemasacademicosComponent } from './sistemasacademicos/sistemasacademicos.component';
+import { AddSistemasacademicosComponent } from './add-sistemasacademicos/add-sistemasacademicos.component';
+import { UpSistemasacademicosComponent } from './up-sistemasacademicos/up-sistemasacademicos.component';
+import { AddAulasComponent } from './add-aulas/add-aulas.component';
+import { UpAulasComponent } from './up-aulas/up-aulas.component';
 
 
 export const UiComponentsRoutes: Routes = [
@@ -78,6 +82,22 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'sistemasacademicos',  // Nueva ruta editar para AulaComponent
         component: SistemasacademicosComponent,
+      },
+      {
+        path: 'addsistemasacademicos',  // Nueva ruta editar para AulaComponent
+        component: AddSistemasacademicosComponent,
+      },
+      {
+        path: 'upsistemasacademicos',  // Nueva ruta editar para AulaComponent
+        component: UpSistemasacademicosComponent,
+      },
+      {
+        path: 'addaulas',  // Nueva ruta editar para AulaComponent
+        component: AddAulasComponent,
+      },
+      {
+        path: 'upaulas',  // Nueva ruta editar para AulaComponent
+        component: UpAulasComponent,
       },
     ],
   },
