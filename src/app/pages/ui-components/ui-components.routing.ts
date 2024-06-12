@@ -14,6 +14,7 @@ import { AddModulosComponent } from './add-modulos/add-modulos.component';
 import { ModulosComponent } from './modulos/modulos.component';
 import { UpModulosComponent } from './up-modulos/up-modulos.component';
 import { UpCarrerasComponent } from './up-carreras/up-carreras.component';
+import { SistemasacademicosComponent } from './sistemasacademicos/sistemasacademicos.component';
 
 
 export const UiComponentsRoutes: Routes = [
@@ -72,6 +73,11 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'upmodulos',  // Nueva ruta editar para AulaComponent
         component: UpModulosComponent,
+      },
+
+      {
+        path: 'sistemasacademicos',  // Nueva ruta editar para AulaComponent
+        component: SistemasacademicosComponent,
       },
     ],
   },

@@ -23,6 +23,8 @@ import { AddMateriasComponent } from './add-materias/add-materias.component';
 import { UpMateriasComponent } from './up-materias/up-materias.component';
 import {ModulosComponent  } from './modulos/modulos.component';
 import { AddModulosComponent } from './add-modulos/add-modulos.component';
+import { SistemasacademicosComponent } from './sistemasacademicos/sistemasacademicos.component';
+
 
 @NgModule({
   imports: [
@@ -47,6 +49,7 @@ import { AddModulosComponent } from './add-modulos/add-modulos.component';
     AddCarrerasComponent,
     AddModulosComponent,
     ModulosComponent,
+    SistemasacademicosComponent,
 
   ],
 })

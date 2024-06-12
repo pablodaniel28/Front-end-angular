@@ -48,6 +48,11 @@ export const navItems: NavItem[] = [
     route: '/ui-components/aulas',
   },
   {
+    displayName: 'Sistema Academico',
+    iconName: 'tooltip',
+    route: '/ui-components/sistemasacademicos',
+  },
+  {
     navCap: 'Auth',
   },
   {
