@@ -20,9 +20,12 @@ import { AppMenuComponent } from './menu/menu.component';
 import { AppTooltipsComponent } from './tooltips/tooltips.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AddMateriasComponent } from './add-materias/add-materias.component';
-import { UpMateriasComponent } from './up-materias/up-materias.component';
 import {ModulosComponent  } from './modulos/modulos.component';
 import { AddModulosComponent } from './add-modulos/add-modulos.component';
+import { SistemasacademicosComponent } from './sistemasacademicos/sistemasacademicos.component';
+import { AddSistemasacademicosComponent } from './add-sistemasacademicos/add-sistemasacademicos.component';
+import {  AddAulasComponent } from './add-aulas/add-aulas.component';
+
 
 @NgModule({
   imports: [
@@ -47,6 +50,9 @@ import { AddModulosComponent } from './add-modulos/add-modulos.component';
     AddCarrerasComponent,
     AddModulosComponent,
     ModulosComponent,
+    SistemasacademicosComponent,
+    AddSistemasacademicosComponent,
+    AddAulasComponent,
   ],
 })
 export class UicomponentsModule {}
