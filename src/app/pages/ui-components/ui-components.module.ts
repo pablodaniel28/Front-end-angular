@@ -47,7 +47,6 @@ import { AddModulosComponent } from './add-modulos/add-modulos.component';
     AddCarrerasComponent,
     AddModulosComponent,
     ModulosComponent,
-
   ],
 })
 export class UicomponentsModule {}

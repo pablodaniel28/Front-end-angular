@@ -47,7 +47,7 @@
     <a mat-menu-item [routerLink]="['/authentication/profile']">
       <mat-icon class="d-flex align-items-center"
         ><i-tabler name="user" class="icon-18 d-flex"></i-tabler></mat-icon
-      >Mi perfil
+      >{{profileInfo?.ourUsers?.name}}
     </a>
     <button mat-menu-item>
       <mat-icon class="d-flex align-items-center"

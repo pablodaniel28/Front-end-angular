@@ -6,19 +6,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class UsersService {
 
-
   private BASE_URL = "http://localhost:8080";
 
   constructor(private http: HttpClient) { }
 
-
   async login(email:string, password:string):Promise<any>{
     const url = `${this.BASE_URL}/auth/login`;
-    try{
-      const response =  this.http.post<any>(url, {email, password}).toPromise()
+    try {
+      const response = await this.http.post<any>(url, { email, password }).toPromise();
       return response;
-
-    }catch(error){
+    } catch (error) {
       throw error;
     }
   }
@@ -27,11 +24,11 @@ export class UsersService {
     const url = `${this.BASE_URL}/auth/register`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
-    })
-    try{
-      const response =  this.http.post<any>(url, userData, {headers}).toPromise()
+    });
+    try {
+      const response = await this.http.post<any>(url, userData, { headers }).toPromise();
       return response;
-    }catch(error){
+    } catch (error) {
       throw error;
     }
   }
@@ -40,11 +37,11 @@ export class UsersService {
     const url = `${this.BASE_URL}/admin/get-all-users`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
-    })
-    try{
-      const response =  this.http.get<any>(url, {headers}).toPromise()
+    });
+    try {
+      const response = await this.http.get<any>(url, { headers }).toPromise();
       return response;
-    }catch(error){
+    } catch (error) {
       throw error;
     }
   }
@@ -53,11 +50,11 @@ export class UsersService {
     const url = `${this.BASE_URL}/adminuser/get-profile`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
-    })
-    try{
-      const response =  this.http.get<any>(url, {headers}).toPromise()
+    });
+    try {
+      const response = await this.http.get<any>(url, { headers }).toPromise();
       return response;
-    }catch(error){
+    } catch (error) {
       throw error;
     }
   }
@@ -66,11 +63,11 @@ export class UsersService {
     const url = `${this.BASE_URL}/admin/get-users/${userId}`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
-    })
-    try{
-      const response =  this.http.get<any>(url, {headers}).toPromise()
+    });
+    try {
+      const response = await this.http.get<any>(url, { headers }).toPromise();
       return response;
-    }catch(error){
+    } catch (error) {
       throw error;
     }
   }
@@ -79,11 +76,11 @@ export class UsersService {
     const url = `${this.BASE_URL}/admin/delete/${userId}`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
-    })
-    try{
-      const response =  this.http.delete<any>(url, {headers}).toPromise()
+    });
+    try {
+      const response = await this.http.delete<any>(url, { headers }).toPromise();
       return response;
-    }catch(error){
+    } catch (error) {
       throw error;
     }
   }
@@ -92,48 +89,46 @@ export class UsersService {
     const url = `${this.BASE_URL}/admin/update/${userId}`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
-    })
-    try{
-      const response =  this.http.put<any>(url, userData, {headers}).toPromise()
+    });
+    try {
+      const response = await this.http.put<any>(url, userData, { headers }).toPromise();
       return response;
-    }catch(error){
+    } catch (error) {
+      console.error('Error en updateUser:', error);
       throw error;
     }
   }
 
-  /***AUTHEMNTICATION METHODS */
   logOut():void{
-    if(typeof localStorage !== 'undefined'){
-      localStorage.removeItem('token')
-      localStorage.removeItem('role')
+    if (typeof localStorage !== 'undefined'){
+      localStorage.removeItem('token');
+      localStorage.removeItem('role');
     }
   }
 
   isAuthenticated(): boolean {
-    if(typeof localStorage !== 'undefined'){
+    if (typeof localStorage !== 'undefined'){
       const token = localStorage.getItem('token');
       return !!token;
     }
     return false;
-
   }
 
   isAdmin(): boolean {
-    if(typeof localStorage !== 'undefined'){
+    if (typeof localStorage !== 'undefined'){
       const role = localStorage.getItem('role');
-      return role === 'ADMIN'
+      return role === 'ADMIN';
     }
     return false;
-
   }
 
   isUser(): boolean {
-    if(typeof localStorage !== 'undefined'){
+    if (typeof localStorage !== 'undefined'){
       const role = localStorage.getItem('role');
-      return role === 'USER'
+      return role === 'USER';
     }
     return false;
-
   }
 
 }
+
