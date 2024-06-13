@@ -46,13 +46,6 @@ export class UpCarrerasComponent implements OnInit {
   }
 
   async editarCarrera() {
-    try {
-      const token = localStorage.getItem('token') || '';
-      const carrera: Carreras = { id: this.id, nombre: this.nombre, nro: this.nro };
-      await this.carrerasService.editarCarrera(carrera, token);
-      this.location.back();
-    } catch (error) {
-      console.error('Error editing carrera:', error);
-    }
+   
   }
 }
