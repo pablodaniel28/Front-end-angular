@@ -11,7 +11,7 @@ import * as TablerIcons from 'angular-tabler-icons/icons';
 import { UiComponentsRoutes } from './ui-components.routing';
 
 // ui components
-import { AddCarrerasComponent } from './add-carreras/add-carreras.component'; // Ajusta la ruta según sea necesario
+
 import { AulasComponent } from './aulas/aulas.component'; // Ajusta la ruta según sea necesario
 import { AppBadgeComponent } from './badge/badge.component';
 import { AppChipsComponent } from './chips/chips.component';
@@ -28,7 +28,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
 import { FacultadComponent } from './facultad/facultad.component';
 import { AddFacultadComponent } from './add-facultad/add-facultad.component';
-import { CarreraComponent } from './carrera/carrera.component';
+
 
 
 
@@ -54,7 +54,6 @@ import { CarreraComponent } from './carrera/carrera.component';
     AppMenuComponent,
     AppTooltipsComponent,
     AddMateriasComponent,
-    AddCarrerasComponent,
     AddModulosComponent,
     ModulosComponent,
     SistemasacademicosComponent,
@@ -64,7 +63,6 @@ import { CarreraComponent } from './carrera/carrera.component';
     UpUsuarioComponent,
     FacultadComponent,
     AddFacultadComponent,
-    CarreraComponent,
   ],
 })
 export class UicomponentsModule {}

@@ -5,14 +5,12 @@ import { AppBadgeComponent } from './badge/badge.component';
 import { AppChipsComponent } from './chips/chips.component';
 import { AppMenuComponent } from './menu/menu.component';
 import { AppTooltipsComponent } from './tooltips/tooltips.component';
-import { AulasComponent } from './aulas/aulas.component'; // Ajusta la ruta según sea necesario
-import { AddCarrerasComponent } from './add-carreras/add-carreras.component'; // Ajusta la ruta según sea necesario
+import { AulasComponent } from './aulas/aulas.component'; // Ajusta la ruta según sea necesario// Ajusta la ruta según sea necesario
 import { AddMateriasComponent } from './add-materias/add-materias.component';
 import { UpMateriasComponent } from './up-materias/up-materias.component';
 import { AddModulosComponent } from './add-modulos/add-modulos.component';
 import { ModulosComponent } from './modulos/modulos.component';
 import { UpModulosComponent } from './up-modulos/up-modulos.component';
-import { UpCarrerasComponent } from './up-carreras/up-carreras.component';
 import { SistemasacademicosComponent } from './sistemasacademicos/sistemasacademicos.component';
 import { AddSistemasacademicosComponent } from './add-sistemasacademicos/add-sistemasacademicos.component';
 import { UpSistemasacademicosComponent } from './up-sistemasacademicos/up-sistemasacademicos.component';
@@ -22,8 +20,6 @@ import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { FacultadComponent } from './facultad/facultad.component';
 import { AddFacultadComponent } from './add-facultad/add-facultad.component';
-import { CarreraComponent } from './carrera/carrera.component';
-
 
 
 
@@ -39,10 +35,7 @@ export const UiComponentsRoutes: Routes = [
         path: 'chips',
         component: AppChipsComponent,
       },
-      {
-        path: 'carreras',
-        component: CarreraComponent,
-      },
+
       {
         path: 'menu',
         component: AppMenuComponent,
@@ -55,14 +48,7 @@ export const UiComponentsRoutes: Routes = [
         path: 'aulas',  // Nueva ruta para AulaComponent
         component: AulasComponent,
       },
-      {
-        path: 'addcarreras',  // Nueva ruta para AulaComponent
-        component: AddCarrerasComponent,
-      },
-      {
-        path: 'upcarreras',  // Nueva ruta para AulaComponent
-        component: UpCarrerasComponent,
-      },
+
 
       {
         path: 'addmaterias',  // Nueva ruta add para AulaComponent
