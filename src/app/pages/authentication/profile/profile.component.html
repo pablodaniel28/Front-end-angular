@@ -20,10 +20,9 @@
               {{profileInfo?.ourUsers?.name}}</mat-label>
             <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Email:
               {{profileInfo?.ourUsers?.email}}</mat-label>
-            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Role:
-              {{profileInfo?.ourUsers?.role}}</mat-label>
-
-
+              <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">
+                Rol: {{ profileInfo?.ourUsers?.role === 'USER' ? 'Docente' : profileInfo?.ourUsers?.role }}
+              </mat-label>
           </form>
 
           <span class="d-block f-w-500 text-center m-t-24">Actualizar Datos?

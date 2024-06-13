@@ -25,6 +25,9 @@ import { AddModulosComponent } from './add-modulos/add-modulos.component';
 import { SistemasacademicosComponent } from './sistemasacademicos/sistemasacademicos.component';
 import { AddSistemasacademicosComponent } from './add-sistemasacademicos/add-sistemasacademicos.component';
 import {  AddAulasComponent } from './add-aulas/add-aulas.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+
+
 
 
 @NgModule({
@@ -53,6 +56,7 @@ import {  AddAulasComponent } from './add-aulas/add-aulas.component';
     SistemasacademicosComponent,
     AddSistemasacademicosComponent,
     AddAulasComponent,
+    // UsuarioComponent,
   ],
 })
 export class UicomponentsModule {}

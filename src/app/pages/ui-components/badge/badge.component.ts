@@ -3,9 +3,6 @@ import { MateriasService } from 'src/app/materias.service';
 import { Materias } from 'src/app/models/materias';
 
 
-
-
-
 @Component({
   selector: 'app-badge',
   templateUrl: './badge.component.html'

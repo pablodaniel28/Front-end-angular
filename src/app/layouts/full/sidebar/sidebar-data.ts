@@ -37,6 +37,7 @@ export const navItems: NavItem[] = [
     iconName: 'layout-navbar-expand',
     route: '/ui-components/menu',
   },
+
   {
     displayName: 'Docente',
     iconName: 'tooltip',
@@ -54,6 +55,11 @@ export const navItems: NavItem[] = [
   },
   {
     navCap: 'Auth',
+  },
+  {
+    displayName: 'Usuarios',
+    iconName: 'tooltip',
+    route: '/ui-components/admin/usuarios',
   },
   {
     displayName: 'Login',

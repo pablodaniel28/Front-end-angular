@@ -9,14 +9,9 @@
   <!-- Notification Dropdown -->
   <!-- --------------------------------------------------------------- -->
 
-  <button mat-icon-button aria-label="Notifications">
-    <i-tabler
-      class="d-flex"
-      name="bell"
-      matBadge="1"
-      matBadgeColor="primary"
-    ></i-tabler>
-  </button>
+  <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">
+    {{ profileInfo?.ourUsers?.role === 'USER' ? 'DOCENTE' : profileInfo?.ourUsers?.role }}
+  </mat-label>
 
   <span class="flex-1-auto"></span>
 
@@ -52,7 +47,7 @@
     <button mat-menu-item>
       <mat-icon class="d-flex align-items-center"
         ><i-tabler name="mail" class="icon-18 d-flex"></i-tabler></mat-icon
-      >Mi cuenta
+      >Soporte
     </button>
     <!-- <button mat-menu-item>
       <mat-icon class="d-flex align-items-center"

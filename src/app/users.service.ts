@@ -60,7 +60,7 @@ export class UsersService {
   }
 
   async getUsersById(userId: string, token:string):Promise<any>{
-    const url = `${this.BASE_URL}/admin/get-users/${userId}`;
+    const url = `${this.BASE_URL}/adminuser/get-users/${userId}`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -86,7 +86,7 @@ export class UsersService {
   }
 
   async updateUSer(userId: string, userData: any, token:string):Promise<any>{
-    const url = `${this.BASE_URL}/admin/update/${userId}`;
+    const url = `${this.BASE_URL}/adminuser/update/${userId}`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });

@@ -19,6 +19,9 @@ import { AddSistemasacademicosComponent } from './add-sistemasacademicos/add-sis
 import { UpSistemasacademicosComponent } from './up-sistemasacademicos/up-sistemasacademicos.component';
 import { AddAulasComponent } from './add-aulas/add-aulas.component';
 import { UpAulasComponent } from './up-aulas/up-aulas.component';
+import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+
 
 
 export const UiComponentsRoutes: Routes = [
@@ -99,6 +102,11 @@ export const UiComponentsRoutes: Routes = [
         path: 'upaulas',  // Nueva ruta editar para AulaComponent
         component: UpAulasComponent,
       },
+      {
+        path: 'admin/usuarios',  // Nueva ruta editar para AulaComponent
+        component: UsuarioComponent,
+      },
+
     ],
   },
 ];
