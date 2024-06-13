@@ -5,6 +5,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsuarioService {
+  getUsuarioById(userId: string) {
+    throw new Error('Method not implemented.');
+  }
+  updateUser(id: any, usuarioSeleccionado: any, token: string) {
+    throw new Error('Method not implemented.');
+  }
 
   private BASE_URL = "http://localhost:8080/api/users";
 

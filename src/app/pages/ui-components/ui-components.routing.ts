@@ -24,6 +24,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
 
 
 
+
 export const UiComponentsRoutes: Routes = [
   {
     path: '',
@@ -105,6 +106,10 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'admin/usuarios',  // Nueva ruta editar para AulaComponent
         component: UsuarioComponent,
+      },
+      {
+        path: 'admin/update',  // Nueva ruta editar para AulaComponent
+        component: UpUsuarioComponent,
       },
 
     ],

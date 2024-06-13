@@ -2,32 +2,40 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/users.service';
 
-
 @Component({
   selector: 'app-usuario',
-  styleUrls: ['./usuario.component.css'],
-  templateUrl: './usuario.component.html'
+  templateUrl: './usuario.component.html',
 })
 export class UsuarioComponent implements OnInit {
-
-  users: any[] = [];
+  hidden = false;
+  token: any;
+  profileInfo: any;
   errorMessage: string = '';
-  userToUpdate: any = {};
-  modalTitle: string = 'Update User';
+  users: any[] = []; // Lista para almacenar los usuarios
 
-  constructor(
-    private readonly userService: UsersService,
-    private readonly router: Router
-  ) {}
+  constructor(private readonly userService: UsersService, private readonly router: Router) {}
 
-  ngOnInit(): void {
-    this.loadUsers();
+  toggleBadgeVisibility() {
+    this.hidden = !this.hidden;
+  }
+
+  async ngOnInit() {
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        throw new Error("No Token Found");
+      }
+      this.token = token; // Guardar el token para uso posterior
+      this.profileInfo = await this.userService.getYourProfile(token);
+      await this.loadUsers(); // Cargar los usuarios después de obtener el perfil
+    } catch (error: any) {
+      this.showError(error.message);
+    }
   }
 
   async loadUsers() {
     try {
-      const token: any = this.getToken();
-      const response = await this.userService.getAllUsers(token);
+      const response = await this.userService.getAllUsers(this.token);
       if (response && response.statusCode === 200 && response.ourUsersList) {
         this.users = response.ourUsersList;
       } else {
@@ -37,50 +45,26 @@ export class UsuarioComponent implements OnInit {
       this.showError(error.message);
     }
   }
-
   async deleteUser(userId: string) {
     const confirmDelete = confirm('Are you sure you want to delete this user?');
     if (confirmDelete) {
       try {
-        const token: any = this.getToken();
-        await this.userService.deleteUser(userId, token);
-        // Refresh the user list after deletion
-        this.loadUsers();
+        const response = await this.userService.deleteUser(userId, this.token);
+        if (response && response.statusCode === 200) {
+          this.users = this.users.filter(user => user.id !== userId); // Actualizar la lista de usuarios
+        } else {
+          this.showError('Failed to delete user.');
+        }
       } catch (error: any) {
         this.showError(error.message);
       }
     }
   }
 
-  openEditModal(user: any) {
-    this.userToUpdate = { ...user };
-    // Abre el modal usando jQuery (asegúrate de que jQuery esté disponible)
-    $('#editUserModal').modal('show');
-  }
-
-  async updateUser() {
-    try {
-      const token: any = this.getToken();
-      await this.userService.updateUSer(this.userToUpdate.id, this.userToUpdate, token);
-      // Cerrar el modal después de actualizar
-      $('#editUserModal').modal('hide');
-      // Refresh the user list after update
-      this.loadUsers();
-    } catch (error: any) {
-      this.showError(error.message);
-    }
-  }
-
-  private getToken(): string {
-    // Implementa la lógica para obtener el token JWT, puede ser desde localStorage o sessionStorage
-    // Ejemplo:
-    return localStorage.getItem('jwt-token') || '';
-  }
-
   showError(message: string) {
     this.errorMessage = message;
     setTimeout(() => {
-      this.errorMessage = ''; // Clear the error message after the specified duration
+      this.errorMessage = '';
     }, 3000);
   }
 }

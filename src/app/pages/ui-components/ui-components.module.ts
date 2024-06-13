@@ -26,6 +26,8 @@ import { SistemasacademicosComponent } from './sistemasacademicos/sistemasacadem
 import { AddSistemasacademicosComponent } from './add-sistemasacademicos/add-sistemasacademicos.component';
 import {  AddAulasComponent } from './add-aulas/add-aulas.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
+
 
 
 
@@ -38,7 +40,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
     FormsModule,
     ReactiveFormsModule,
     TablerIconsModule.pick(TablerIcons),
-    MatNativeDateModule
+    MatNativeDateModule,
+    
       // Importa el componente como independiente
 
   ],
@@ -56,7 +59,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
     SistemasacademicosComponent,
     AddSistemasacademicosComponent,
     AddAulasComponent,
-    // UsuarioComponent,
+    UsuarioComponent,
+    UpUsuarioComponent,
   ],
 })
 export class UicomponentsModule {}
