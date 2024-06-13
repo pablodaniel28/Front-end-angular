@@ -36,16 +36,15 @@
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Nro</th>
-
+          <th scope="col">Modulo</th>
           <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
-        <!-- <tr *ngFor="let aula of aulas">
+        <tr *ngFor="let aula of aulas">
           <th scope="row">{{ aula.id }}</th>
           <td>{{ aula.nombre }}</td>
-          <td>{{ aula.nro }}</td>
+          <td>{{ aula.moduloId }}</td>
           <td>
             <a [routerLink]="['/ui-components/upaulas']" [queryParams]="{ id: aula.id }" class="btn btn-primary btn-sm me-1" title="Editar">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
@@ -62,7 +61,7 @@
             </button>
 
           </td>
-        </tr> -->
+        </tr>
       </tbody>
     </table>
   </mat-card-content>

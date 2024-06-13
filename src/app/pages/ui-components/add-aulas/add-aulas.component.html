@@ -1,13 +1,15 @@
-<h2>Crear Aula</h2> <!-- Cambio de 'Crear Modulo' a 'Crear Aula' -->
+<h2>Crear Aula</h2>
 <div class="container">
-  <form (ngSubmit)="guardarAula()"> <!-- Cambio de guardarModulo a guardarAula -->
+  <form (ngSubmit)="guardarAula()">
     <div class="form-group mb-2">
       <label for="nombre" class="form-label">Nombre</label>
       <input [(ngModel)]="nombre" type="text" class="form-control" id="nombre" name="nombre" required>
     </div>
     <div class="form-group mb-2">
-      <label for="nro" class="form-label">Nro</label>
-      <input [(ngModel)]="nro" type="text" class="form-control" id="nro" name="nro" required>
+      <label for="modulo" class="form-label">Modulo</label>
+      <select [(ngModel)]="selectedModulo" class="form-control" id="modulo" name="modulo" required>
+        <option *ngFor="let modulo of modulos" [value]="modulo.id">{{ modulo.nombre }}</option>
+      </select>
     </div>
     <button type="submit" class="btn btn-primary">Crear</button>
   </form>

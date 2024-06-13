@@ -15,7 +15,6 @@ import { FormsModule } from '@angular/forms';
 export class UpAulasComponent implements OnInit {
   id: number = 0;
   nombre: string = '';
-  nro: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +35,7 @@ export class UpAulasComponent implements OnInit {
       const aula = await this.aulasService.getAulaById(id, token); // Cambio de getModuloById a getAulaById
       if (aula) {
         this.nombre = aula.nombre;
-        this.nro = aula.nro;
+
       } else {
         console.error('No se encontró el aula con el ID especificado.');
       }
@@ -48,7 +47,7 @@ export class UpAulasComponent implements OnInit {
   async editarAula() { // Cambio de editarModulo a editarAula
     try {
       const token = localStorage.getItem('token') || '';
-      const aula: Aulas = { id: this.id, nombre: this.nombre, nro: this.nro }; // Cambio de Modulos a Aulas
+      const aula: Aulas = { id: this.id, nombre: this.nombre,moduloId: this.id}; // Cambio de Modulos a Aulas
       await this.aulasService.editarAula(aula, token); // Cambio de editarModulo a editarAula y editarModulo a editarAula
       this.location.back();
     } catch (error) {
