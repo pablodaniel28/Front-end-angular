@@ -3,13 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Facultad } from './models/facultad';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class FacultadesService {
-
-  private BASE_URL = 'http://localhost:8080/facultades'; // URL base del backend
+  private BASE_URL = 'http://localhost:8080/facultades';
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +17,6 @@ export class FacultadesService {
     });
     return this.http.get<Facultad[]>(this.BASE_URL, { headers });
   }
-  
 
   getFacultadById(id: number, token: string): Observable<Facultad> {
     const headers = new HttpHeaders({

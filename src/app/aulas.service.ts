@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Aulas } from './models/aulas';
 import { Observable } from 'rxjs';
+import { Aulas2 } from './models/aulas2';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,12 @@ export class AulasService {
 
   constructor(private http: HttpClient) { }
 
-  async getAllAulas(token: string): Promise<Aulas[]> {
+  async getAllAulas(token: string): Promise<Aulas2[]> {
     const url = `${this.BASE_URL}/aulas`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    const response = await this.http.get<Aulas[]>(url, { headers }).toPromise();
+    const response = await this.http.get<Aulas2[]>(url, { headers }).toPromise();
     return response || [];
   }
 

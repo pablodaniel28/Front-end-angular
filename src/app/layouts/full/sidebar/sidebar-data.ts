@@ -25,12 +25,12 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Facultad',
     iconName: 'poker-chip',
-    route: '/ui-components/chips',
+    route: '/ui-components/facultad',
   },
   {
     displayName: 'Carrera',
     iconName: 'list',
-    route: '/ui-components/lists',
+    route: '/ui-components/carreras',
   },
   {
     displayName: 'Grupo',

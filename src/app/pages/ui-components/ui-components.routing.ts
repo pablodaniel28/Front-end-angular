@@ -3,7 +3,6 @@ import { Routes } from '@angular/router';
 // ui
 import { AppBadgeComponent } from './badge/badge.component';
 import { AppChipsComponent } from './chips/chips.component';
-import { AppListsComponent } from './lists/lists.component';
 import { AppMenuComponent } from './menu/menu.component';
 import { AppTooltipsComponent } from './tooltips/tooltips.component';
 import { AulasComponent } from './aulas/aulas.component'; // Ajusta la ruta según sea necesario
@@ -21,6 +20,9 @@ import { AddAulasComponent } from './add-aulas/add-aulas.component';
 import { UpAulasComponent } from './up-aulas/up-aulas.component';
 import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { FacultadComponent } from './facultad/facultad.component';
+import { AddFacultadComponent } from './add-facultad/add-facultad.component';
+import { CarreraComponent } from './carrera/carrera.component';
 
 
 
@@ -38,8 +40,8 @@ export const UiComponentsRoutes: Routes = [
         component: AppChipsComponent,
       },
       {
-        path: 'lists',
-        component: AppListsComponent,
+        path: 'carreras',
+        component: CarreraComponent,
       },
       {
         path: 'menu',
@@ -111,7 +113,14 @@ export const UiComponentsRoutes: Routes = [
         path: 'admin/update',  // Nueva ruta editar para AulaComponent
         component: UpUsuarioComponent,
       },
-
+      {
+        path: 'facultad',  // Nueva ruta editar para facuComponent
+        component: FacultadComponent,
+      },
+      {
+        path: 'addfacultad',  // Nueva ruta editar para addfacuComponent
+        component: AddFacultadComponent,
+      },
     ],
   },
 ];

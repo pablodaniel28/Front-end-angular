@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AulasService } from 'src/app/aulas.service';
 import { Aulas } from 'src/app/models/aulas';
+import { Aulas2 } from 'src/app/models/aulas2';
 
 @Component({
   selector: 'app-aulas',
@@ -18,11 +19,13 @@ export class AulasComponent implements OnInit {
 
   hidden = false;
   aulas: Aulas[] = []; // Variable para almacenar las aulas
+  aulas2: Aulas2[] = []; // Variable para almacenar las aulas
+  nuevo: any[] = []; // Variable para almacenar las aulas
 
   async loadAulas() {
     try {
       const token = localStorage.getItem('token') || ''; // Obtén el token desde el localStorage
-      this.aulas = await this.aulasService.getAllAulas(token); // Obtén las aulas desde el servicio
+      this.aulas2 = await this.aulasService.getAllAulas(token); // Obtén las aulas desde el servicio
     } catch (error) {
       console.error('Error loading aulas:', error); // Maneja los errores
     }

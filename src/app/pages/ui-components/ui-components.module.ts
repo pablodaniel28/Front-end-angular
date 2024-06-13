@@ -15,7 +15,6 @@ import { AddCarrerasComponent } from './add-carreras/add-carreras.component'; //
 import { AulasComponent } from './aulas/aulas.component'; // Ajusta la ruta según sea necesario
 import { AppBadgeComponent } from './badge/badge.component';
 import { AppChipsComponent } from './chips/chips.component';
-import { AppListsComponent } from './lists/lists.component';
 import { AppMenuComponent } from './menu/menu.component';
 import { AppTooltipsComponent } from './tooltips/tooltips.component';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -27,6 +26,9 @@ import { AddSistemasacademicosComponent } from './add-sistemasacademicos/add-sis
 import {  AddAulasComponent } from './add-aulas/add-aulas.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
+import { FacultadComponent } from './facultad/facultad.component';
+import { AddFacultadComponent } from './add-facultad/add-facultad.component';
+import { CarreraComponent } from './carrera/carrera.component';
 
 
 
@@ -41,7 +43,7 @@ import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
     ReactiveFormsModule,
     TablerIconsModule.pick(TablerIcons),
     MatNativeDateModule,
-    
+
       // Importa el componente como independiente
 
   ],
@@ -49,7 +51,6 @@ import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
     AppBadgeComponent,
     AulasComponent,
     AppChipsComponent,
-    AppListsComponent,
     AppMenuComponent,
     AppTooltipsComponent,
     AddMateriasComponent,
@@ -61,6 +62,9 @@ import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
     AddAulasComponent,
     UsuarioComponent,
     UpUsuarioComponent,
+    FacultadComponent,
+    AddFacultadComponent,
+    CarreraComponent,
   ],
 })
 export class UicomponentsModule {}

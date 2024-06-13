@@ -4,6 +4,7 @@ import { ModulosService } from 'src/app/modulos.service';
 import { Aulas } from 'src/app/models/aulas';
 import { Modulos } from 'src/app/models/modulos';
 import { Location } from '@angular/common';
+import { Aulas2 } from 'src/app/models/aulas2';
 
 @Component({
   selector: 'app-add-aulas',
@@ -14,6 +15,7 @@ export class AddAulasComponent implements OnInit {
   id: number = 0;
   nombre: string = '';
   aulas: Aulas[] = [];
+  aulas2: Aulas2[] = [];
   modulos: Modulos[] = [];
   selectedModulo: number | null = null;
 
@@ -27,7 +29,7 @@ export class AddAulasComponent implements OnInit {
   async loadAulas() {
     try {
       const token = localStorage.getItem('token') || '';
-      this.aulas = await this.aulasService.getAllAulas(token);
+      this.aulas2 = await this.aulasService.getAllAulas(token);
     } catch (error) {
       console.error('Error loading aulas:', error);
     }
