@@ -23,6 +23,10 @@ import { AddFacultadComponent } from './add-facultad/add-facultad.component';
 import { CarreraComponent } from './carrera/carrera.component';
 import { AddCarreraComponent } from './add-carrera/add-carrera.component';
 import { UpCarreraComponent } from './up-carrera/up-carrera.component';
+import { HorarioComponent } from 'src/app/pages/ui-components/horario/horario.component';
+import { AsistenciaComponent } from './asistencia/asistencia.component';
+import { AddAsistenciaComponent } from './add-asistencia/add-asistencia.component';
+import { AddHorarioComponent } from './add-horario/add-horario.component';
 
 
 
@@ -121,6 +125,22 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'upcarrera',
         component: UpCarreraComponent,
+      },
+      {
+        path: 'horario',
+        component: HorarioComponent,
+      },
+      {
+        path: 'addhorario',
+        component: AddHorarioComponent,
+      },
+      {
+        path: 'asistencia',
+        component: AsistenciaComponent,
+      },
+      {
+        path: 'addasistencia',
+        component: AddAsistenciaComponent,
       },
     ],
   },
