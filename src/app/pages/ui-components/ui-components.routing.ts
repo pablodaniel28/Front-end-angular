@@ -20,6 +20,9 @@ import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { FacultadComponent } from './facultad/facultad.component';
 import { AddFacultadComponent } from './add-facultad/add-facultad.component';
+import { CarreraComponent } from './carrera/carrera.component';
+import { AddCarreraComponent } from './add-carrera/add-carrera.component';
+import { UpCarreraComponent } from './up-carrera/up-carrera.component';
 
 
 
@@ -106,6 +109,18 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'addfacultad',  // Nueva ruta editar para addfacuComponent
         component: AddFacultadComponent,
+      },
+      {
+        path: 'carreras',  // Nueva ruta editar para addfacuComponent
+        component: CarreraComponent,
+      },
+      {
+        path: 'addcarrera',  // Nueva ruta editar para addfacuComponent
+        component: AddCarreraComponent,
+      },
+      {
+        path: 'upcarrera',  // Nueva ruta editar para addfacuComponent
+        component: UpCarreraComponent,
       },
     ],
   },

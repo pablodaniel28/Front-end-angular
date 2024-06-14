@@ -6,7 +6,6 @@ import { Aulas2 } from 'src/app/models/aulas2';
 @Component({
   selector: 'app-aulas',
   templateUrl: './aulas.component.html',
-  styleUrls: ['./aulas.component.scss']
 })
 export class AulasComponent implements OnInit {
   Aula: any;

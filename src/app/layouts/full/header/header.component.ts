@@ -41,7 +41,10 @@ export class HeaderComponent {
     }
 
   }
-
+  logout(): void {
+    this.userService.logOut();
+    this.router.navigate(['/authentication/login'])
+  }
   showError(mess: string) {
     this.errorMessage = mess;
     setTimeout(() => {

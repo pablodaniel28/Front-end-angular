@@ -28,6 +28,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { UpUsuarioComponent } from './up-usuario/up-usuario.component';
 import { FacultadComponent } from './facultad/facultad.component';
 import { AddFacultadComponent } from './add-facultad/add-facultad.component';
+import { CarreraComponent } from './carrera/carrera.component';
+import { AddCarreraComponent } from './add-carrera/add-carrera.component';
 
 
 
@@ -63,6 +65,8 @@ import { AddFacultadComponent } from './add-facultad/add-facultad.component';
     UpUsuarioComponent,
     FacultadComponent,
     AddFacultadComponent,
+    CarreraComponent,
+    AddCarreraComponent,
   ],
 })
 export class UicomponentsModule {}
