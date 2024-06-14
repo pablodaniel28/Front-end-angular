@@ -119,7 +119,7 @@ export const UiComponentsRoutes: Routes = [
         component: AddCarreraComponent,
       },
       {
-        path: 'upcarrera',  // Nueva ruta editar para addfacuComponent
+        path: 'upcarrera',
         component: UpCarreraComponent,
       },
     ],

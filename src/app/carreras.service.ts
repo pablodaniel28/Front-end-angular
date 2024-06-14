@@ -36,4 +36,20 @@ export class CarrerasService {
       throw error;
     }
   }
+
+  async updateCarrera(id: number, carreraData: { nro: string; nombre: string; facultad: { id: number}; }, token: string): Promise<Carreras> {
+    const url = `${this.BASE_URL}/${id}`;
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    try {
+      const response = await this.http.put<any>(url, carreraData, { headers }).toPromise();
+      return response as Carreras;
+    } catch (error) {
+      console.error('Error updating carrera:', error);
+      throw error;
+    }
+  }
+
 }

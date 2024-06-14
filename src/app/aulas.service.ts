@@ -34,8 +34,8 @@ export class AulasService {
     }
   }
 
-  async editarAula(aula: Aulas, token: string): Promise<any> {
-    const url = `${this.BASE_URL}/aulas/${aula.id}?moduloId=${aula.moduloId}`;
+  async editarAula(aula: Aulas2, token: string): Promise<any> {
+    const url = `${this.BASE_URL}/aulas/${aula.id}`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -45,6 +45,7 @@ export class AulasService {
       throw error;
     }
   }
+
 
   async eliminarAula(id: number, token: string): Promise<any> {
     const url = `${this.BASE_URL}/aulas/${id}`;

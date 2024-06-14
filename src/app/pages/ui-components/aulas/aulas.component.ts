@@ -41,7 +41,7 @@ export class AulasComponent implements OnInit {
     }
   }
 
-  async editarAula(aula: Aulas) {
+  async editarAula(aula: Aulas2) {
     try {
       const token = localStorage.getItem('token') || ''; // Obtén el token desde el localStorage
       await this.aulasService.editarAula(aula, token); // Edita el aula utilizando el servicio

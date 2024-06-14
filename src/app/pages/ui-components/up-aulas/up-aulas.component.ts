@@ -4,6 +4,7 @@ import { AulasService } from 'src/app/aulas.service'; // Cambio de ModulosServic
 import { Aulas } from 'src/app/models/aulas'; // Cambio de Modulos a Aulas
 import { Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Aulas2 } from 'src/app/models/aulas2';
 
 @Component({
   selector: 'app-up-aulas', // Cambio de 'app-up-modulos' a 'app-up-aulas'
@@ -25,7 +26,8 @@ export class UpAulasComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.id = +params['id'] || 0;
-      this.loadAula(this.id); // Cambio de loadModulo a loadAula
+      this.loadAula(this.id);
+      console.log(this.id);
     });
   }
 
@@ -47,7 +49,7 @@ export class UpAulasComponent implements OnInit {
   async editarAula() { // Cambio de editarModulo a editarAula
     try {
       const token = localStorage.getItem('token') || '';
-      const aula: Aulas = { id: this.id, nombre: this.nombre,moduloId: this.id}; // Cambio de Modulos a Aulas
+      const aula: Aulas2 = { id: this.id, nombre: this.nombre,modulo: { id: this.id }};
       await this.aulasService.editarAula(aula, token); // Cambio de editarModulo a editarAula y editarModulo a editarAula
       this.location.back();
     } catch (error) {
