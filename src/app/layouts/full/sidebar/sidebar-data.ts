@@ -49,11 +49,6 @@ export const navItems: NavItem[] = [
   },
 
   {
-    displayName: 'Docente',
-    iconName: 'tooltip',
-    route: '/ui-components/tooltips',
-  },
-  {
     displayName: 'Aula',
     iconName: 'tooltip',
     route: '/ui-components/aulas',

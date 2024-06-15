@@ -18,11 +18,11 @@ export class AsistenciaComponent {
 
   async loadAsistencia() {
     try {
-      const token = localStorage.getItem('token') || ''; // Obtén el token desde el localStorage
+      const token = localStorage.getItem('token') || '';
       this.asistencia = await this.asistenciaService.getAllAsistencia(token);
-      console.log('Carreras cargadas:', this.asistencia); // Muestra las carreras cargadas en la consola
+      console.log('Asistencias cargadas:', this.asistencia);
     } catch (error) {
-      console.error('Error cargando carreras:', error); // Maneja los errores al cargar las carreras
+      console.error('Error cargando asistencias:', error);
     }
   }
 }
