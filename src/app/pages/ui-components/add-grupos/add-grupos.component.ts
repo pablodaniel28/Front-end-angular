@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { GruposService } from 'src/app/grupos.service';
-import { FacultadesService } from 'src/app/facultades.service';
 import { CarrerasService } from 'src/app/carreras.service';
 import { GestionesService } from 'src/app/gestiones.service';
 import { MateriasService } from 'src/app/materias.service';
 import { SistemasacademicosService } from 'src/app/sistemasacademicos.service';
 import { Location } from '@angular/common';
-import { Observable } from 'rxjs';
-import { Facultad } from 'src/app/models/facultad';
-import { Grupos } from 'src/app/models/grupos';
 import { Carreras } from 'src/app/models/carreras';
 import { Gestiones } from 'src/app/models/gestiones';
 import { Materias } from 'src/app/models/materias';
 import { Sistemasacademicos } from 'src/app/models/sistemasacademicos';
 import { UsersService } from 'src/app/users.service';
+import { usuarios } from 'src/app/models/usuarios';
 
 @Component({
   selector: 'app-add-grupos',
@@ -31,8 +28,9 @@ export class AddGruposComponent implements OnInit {
   carreras: Carreras[] = [];
   gestiones: Gestiones[] = [];
   materias: Materias[] = [];
-  OurUsers: any[] = [];
+  users: usuarios[] = [];// Lista para almacenar los usuarios
   sistemasAcademicos: Sistemasacademicos[] = [];
+  token: string = '';
 
   constructor(
     private usersService: UsersService,
@@ -48,7 +46,7 @@ export class AddGruposComponent implements OnInit {
     this.loadCarreras();
     this.loadGestiones();
     this.loadMaterias();
-    this.loadOurUsers();
+    this.loadUsers();
     this.loadSistemasAcademicos();
   }
 
@@ -69,16 +67,16 @@ export class AddGruposComponent implements OnInit {
 
 
   loadGestiones(): void {
-   const token = localStorage.getItem('token') || '';
-  this.gestionService.getAllGestiones(token).then(
-     (data: Gestiones[]) => {
-      this.gestiones = data;
-       },
-       (error) => {
-         console.error('Error loading gestiones:', error);
-      }
-   );
- }
+    const token = localStorage.getItem('token') || '';
+   this.gestionService.getAllGestiones(token).then(
+      (data: Gestiones[]) => {
+       this.gestiones = data;
+        },
+        (error) => {
+          console.error('Error loading gestiones:', error);
+       }
+    );
+  }
 
   loadMaterias(): void {
     const token = localStorage.getItem('token') || '';
@@ -93,18 +91,36 @@ export class AddGruposComponent implements OnInit {
     );
   }
 
-  loadOurUsers(): void {
-    const token = localStorage.getItem('token') || '';
-    this.usersService.getAllUsers(token).then(
-      (data: any[]) => {
-        this.OurUsers = data;
+  async loadUsers(): Promise<void> {
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        throw new Error("No Token Found");
       }
-    ).catch(
-      (error) => {
-        console.error('Error loading our users:', error);
+      this.token = token;
+      const response = await this.usersService.getAllUsers(this.token);
+      if (response && response.statusCode === 200 && response.ourUsersList) {
+        this.users = response.ourUsersList;
+      } else {
+        console.error('No users found.');
       }
-    );
+    } catch (error: any) {
+      console.error('Error loading users:', error.message);
+    }
   }
+  // loadOurUsers(): void {
+  //   const token = localStorage.getItem('token') || '';
+  //   this.usersService.getAllUsers(token).then(
+  //     (data: any[]) => {
+  //       this.OurUsers = data;
+  //     }
+  //   ).catch(
+  //     (error) => {
+  //       console.error('Error loading our users:', error);
+  //     }
+  //   );
+  // }
+
 
   loadSistemasAcademicos(): void {
     const token = localStorage.getItem('token') || '';

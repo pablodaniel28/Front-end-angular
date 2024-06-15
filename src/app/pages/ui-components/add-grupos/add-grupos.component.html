@@ -39,9 +39,9 @@
     </div>
 
     <div class="form-group mb-2">
-      <label for="User" class="form-label">user</label>
+      <label for="user" class="form-label">User</label>
       <select [(ngModel)]="selectedOurUser" class="form-control" id="user" name="user" required>
-        <option *ngFor="let User of OurUsers" [value]="User.id">{{ User.name }}</option>
+        <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
       </select>
     </div>
     <button type="submit" class="btn btn-primary">Crear</button>
