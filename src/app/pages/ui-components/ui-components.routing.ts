@@ -28,6 +28,7 @@ import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { AddAsistenciaComponent } from './add-asistencia/add-asistencia.component';
 import { HorarioComponent } from './horario/horario.component';
 import { AddHorarioComponent } from './add-horario/add-horario.component';
+import { AddGruposComponent } from './add-grupos/add-grupos.component';
 
 
 
@@ -146,6 +147,10 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'addhorario',
         component: AddHorarioComponent,
+      },
+      {
+        path: 'addgrupos',
+        component: AddGruposComponent,
       },
     ],
   },

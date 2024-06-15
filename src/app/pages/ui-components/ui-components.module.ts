@@ -36,6 +36,7 @@ import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { AddAsistenciaComponent } from './add-asistencia/add-asistencia.component';
 import { AddHorarioComponent } from './add-horario/add-horario.component';
 import { HorarioComponent } from './horario/horario.component';
+import { AddGruposComponent } from './add-grupos/add-grupos.component';
 
 
 @NgModule({
@@ -75,6 +76,8 @@ import { HorarioComponent } from './horario/horario.component';
     AddAsistenciaComponent,
     AddHorarioComponent,
     HorarioComponent,
+    AddGruposComponent,
+    UpUsuarioComponent,
   ],
 })
 export class UicomponentsModule {}
