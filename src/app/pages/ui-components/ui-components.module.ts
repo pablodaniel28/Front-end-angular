@@ -31,10 +31,7 @@ import { AddFacultadComponent } from './add-facultad/add-facultad.component';
 import { CarreraComponent } from './carrera/carrera.component';
 import { AddCarreraComponent } from './add-carrera/add-carrera.component';
 import { UpCarreraComponent } from './up-carrera/up-carrera.component';
-
-
-
-
+import { GruposComponent } from './grupos/grupos.component';
 
 
 @NgModule({
@@ -69,6 +66,7 @@ import { UpCarreraComponent } from './up-carrera/up-carrera.component';
     CarreraComponent,
     AddCarreraComponent,
     UpCarreraComponent,
+    GruposComponent,
   ],
 })
 export class UicomponentsModule {}

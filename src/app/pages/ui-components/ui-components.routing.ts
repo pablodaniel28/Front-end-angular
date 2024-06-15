@@ -23,6 +23,7 @@ import { AddFacultadComponent } from './add-facultad/add-facultad.component';
 import { CarreraComponent } from './carrera/carrera.component';
 import { AddCarreraComponent } from './add-carrera/add-carrera.component';
 import { UpCarreraComponent } from './up-carrera/up-carrera.component';
+import { GruposComponent } from './grupos/grupos.component';
 
 
 
@@ -121,6 +122,10 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'upcarrera',
         component: UpCarreraComponent,
+      },
+      {
+        path: 'grupos',
+        component: GruposComponent,
       },
     ],
   },

@@ -35,7 +35,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Grupo',
     iconName: 'layout-navbar-expand',
-    route: '/ui-components/menu',
+    route: '/ui-components/grupos',
   },
 
   {
