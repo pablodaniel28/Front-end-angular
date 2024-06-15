@@ -27,8 +27,8 @@
         <tbody>
           <tr *ngFor="let a of asistencia">
             <th scope="row">{{ a.id }}</th>
-            <td>Sistemas Informacion 2</td>
-            <td>SB</td>
+            <td>{{ a.grupo.materia.nombre }}</td>
+            <td>{{ a.grupo.nombre }}</td>
             <td>7:00</td>
             <td>{{ a.fecha }}</td>
             <td>{{ a.hora }}</td>
