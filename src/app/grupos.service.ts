@@ -28,7 +28,8 @@ export class GruposService {
     gestion: { id: number };
     materia: { id: number };
     ourUsers: { id: number };
-    sistemaacademico: { id: number }
+    sistemaacademico: { id: number };
+    horario:{id: number}
   }, token: string): Promise<Grupos> {
     const url = `${this.BASE_URL}`;
     const headers = new HttpHeaders({
@@ -51,7 +52,8 @@ export class GruposService {
     gestion: { id: number };
     materia: { id: number };
     ourUsers: { id: number };
-    sistemaacademico: { id: number }
+    sistemaacademico: { id: number };
+    horario:{id: number}
   }, token: string): Promise<Grupos> {
     const url = `${this.BASE_URL}/${id}`;
     const headers = new HttpHeaders({

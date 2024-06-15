@@ -44,6 +44,13 @@
         <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
       </select>
     </div>
+
+    <div class="form-group mb-2">
+      <label for="horario" class="form-label">Horario</label>
+      <select [(ngModel)]="selectedHorario" class="form-control" id="horario" name="horario" required>
+        <option *ngFor="let horario of horarios" [value]="horario.id">{{ horario.horainicio }} - {{ horario.horafin }} | Dia: {{ horario.dia }} </option>
+      </select>
+    </div>
     <button type="submit" class="btn btn-primary">Crear</button>
   </form>
 </div>
