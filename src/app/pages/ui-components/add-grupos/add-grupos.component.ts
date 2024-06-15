@@ -10,6 +10,7 @@ import { Gestiones } from 'src/app/models/gestiones';
 import { Materias } from 'src/app/models/materias';
 import { Sistemasacademicos } from 'src/app/models/sistemasacademicos';
 import { UsersService } from 'src/app/users.service';
+import { usuarios } from 'src/app/models/usuarios';
 
 @Component({
   selector: 'app-add-grupos',
@@ -27,10 +28,10 @@ export class AddGruposComponent implements OnInit {
   carreras: Carreras[] = [];
   gestiones: Gestiones[] = [];
   materias: Materias[] = [];
-  users: any[] = [];// Lista para almacenar los usuarios
+  users: usuarios[] = [];// Lista para almacenar los usuarios
   sistemasAcademicos: Sistemasacademicos[] = [];
   token: string = '';
-  
+
   constructor(
     private usersService: UsersService,
     private grupoService: GruposService,
