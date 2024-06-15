@@ -5,7 +5,8 @@ import { Aulas } from 'src/app/models/aulas'; // Cambio de Modulos a Aulas
 import { Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Aulas2 } from 'src/app/models/aulas2';
-
+import { ModulosService } from 'src/app/modulos.service';
+import { Modulos } from 'src/app/models/modulos';
 @Component({
   selector: 'app-up-aulas', // Cambio de 'app-up-modulos' a 'app-up-aulas'
   standalone: true,
@@ -16,11 +17,13 @@ import { Aulas2 } from 'src/app/models/aulas2';
 export class UpAulasComponent implements OnInit {
   id: number = 0;
   nombre: string = '';
-
+  modulos: Modulos[] = [];
+  selectedModulo: number | null = null;
   constructor(
     private route: ActivatedRoute,
     private aulasService: AulasService, // Cambio de modulosService a aulasService
-    private location: Location
+    private location: Location,
+    private modulosService: ModulosService
   ) { }
 
   ngOnInit(): void {
@@ -29,8 +32,16 @@ export class UpAulasComponent implements OnInit {
       this.loadAula(this.id);
       console.log(this.id);
     });
+    this.loadModulos();
   }
-
+  async loadModulos() {
+    try {
+      const token = localStorage.getItem('token') || '';
+      this.modulos = await this.modulosService.getAllModulos(token);
+    } catch (error) {
+      console.error('Error loading modulos:', error);
+    }
+  }
   async loadAula(id: number) { // Cambio de loadModulo a loadAula
     try {
       const token = localStorage.getItem('token') || '';
@@ -56,4 +67,6 @@ export class UpAulasComponent implements OnInit {
       console.error('Error editing aula:', error); // Cambio de Error editing modulo a Error editing aula
     }
   }
+
+
 }

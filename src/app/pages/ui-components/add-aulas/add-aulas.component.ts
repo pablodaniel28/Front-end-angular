@@ -47,7 +47,7 @@ export class AddAulasComponent implements OnInit {
   async guardarAula() {
     try {
       if (this.selectedModulo !== null) { // Verifica si se seleccionó un módulo
-        const aula: Aulas = { id: this.id, nombre: this.nombre, moduloId: this.selectedModulo }; // Asigna selectedModulo a moduloId
+        const aula: Aulas = { id: this.id, nombre: this.nombre ,moduloId: this.selectedModulo}; // Asigna selectedModulo a moduloId
         const token = localStorage.getItem('token') || '';
         await this.aulasService.guardarAula(aula, token); // Guarda el aula utilizando el servicio
         this.loadAulas(); // Vuelve a cargar las aulas después de guardar

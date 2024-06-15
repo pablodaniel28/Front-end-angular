@@ -31,12 +31,7 @@ import { AddFacultadComponent } from './add-facultad/add-facultad.component';
 import { CarreraComponent } from './carrera/carrera.component';
 import { AddCarreraComponent } from './add-carrera/add-carrera.component';
 import { UpCarreraComponent } from './up-carrera/up-carrera.component';
-import { HorarioComponent } from './horario/horario.component';
-import { AsistenciaComponent } from './asistencia/asistencia.component';
-import { AddAsistenciaComponent } from './add-asistencia/add-asistencia.component';
-import { AddHorarioComponent } from './add-horario/add-horario.component';
-
-
+import { GruposComponent } from './grupos/grupos.component';
 
 
 @NgModule({
@@ -48,6 +43,9 @@ import { AddHorarioComponent } from './add-horario/add-horario.component';
     ReactiveFormsModule,
     TablerIconsModule.pick(TablerIcons),
     MatNativeDateModule,
+
+      // Importa el componente como independiente
+
   ],
   declarations: [
     AppBadgeComponent,
@@ -68,10 +66,7 @@ import { AddHorarioComponent } from './add-horario/add-horario.component';
     CarreraComponent,
     AddCarreraComponent,
     UpCarreraComponent,
-    HorarioComponent,
-    AsistenciaComponent,
-    AddAsistenciaComponent,
-    AddHorarioComponent,
+    GruposComponent,
   ],
 })
 export class UicomponentsModule {}
