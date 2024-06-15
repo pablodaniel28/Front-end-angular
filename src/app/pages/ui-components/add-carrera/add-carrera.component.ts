@@ -20,7 +20,7 @@ export class AddCarreraComponent implements OnInit {
     private carreraService: CarrerasService,
     private facultadService: FacultadesService,
     private location: Location
-  ) {}
+  ) { }
 
 
   ngOnInit(): void {

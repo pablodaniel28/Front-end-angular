@@ -13,6 +13,16 @@ export const navItems: NavItem[] = [
     navCap: 'Administracion',
   },
   {
+    displayName: 'Horario',
+    iconName: 'rosette',
+    route: '/ui-components/horario',
+  },
+  {
+    displayName: 'Asistencia',
+    iconName: 'rosette',
+    route: '/ui-components/asistencia',
+  },
+  {
     displayName: 'Materia',
     iconName: 'rosette',
     route: '/ui-components/badge',
