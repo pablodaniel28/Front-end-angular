@@ -24,6 +24,10 @@ import { CarreraComponent } from './carrera/carrera.component';
 import { AddCarreraComponent } from './add-carrera/add-carrera.component';
 import { UpCarreraComponent } from './up-carrera/up-carrera.component';
 import { GruposComponent } from './grupos/grupos.component';
+import { AsistenciaComponent } from './asistencia/asistencia.component';
+import { AddAsistenciaComponent } from './add-asistencia/add-asistencia.component';
+import { HorarioComponent } from './horario/horario.component';
+import { AddHorarioComponent } from './add-horario/add-horario.component';
 
 
 
@@ -126,6 +130,22 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'grupos',
         component: GruposComponent,
+      },
+      {
+        path: 'asistencia',
+        component: AsistenciaComponent,
+      },
+      {
+        path: 'addasistencia',
+        component: AddAsistenciaComponent,
+      },
+      {
+        path: 'horario',
+        component: HorarioComponent,
+      },
+      {
+        path: 'addhorario',
+        component: AddHorarioComponent,
       },
     ],
   },

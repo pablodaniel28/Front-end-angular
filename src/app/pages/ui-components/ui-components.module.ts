@@ -32,6 +32,10 @@ import { CarreraComponent } from './carrera/carrera.component';
 import { AddCarreraComponent } from './add-carrera/add-carrera.component';
 import { UpCarreraComponent } from './up-carrera/up-carrera.component';
 import { GruposComponent } from './grupos/grupos.component';
+import { AsistenciaComponent } from './asistencia/asistencia.component';
+import { AddAsistenciaComponent } from './add-asistencia/add-asistencia.component';
+import { AddHorarioComponent } from './add-horario/add-horario.component';
+import { HorarioComponent } from './horario/horario.component';
 
 
 @NgModule({
@@ -67,6 +71,10 @@ import { GruposComponent } from './grupos/grupos.component';
     AddCarreraComponent,
     UpCarreraComponent,
     GruposComponent,
+    AsistenciaComponent,
+    AddAsistenciaComponent,
+    AddHorarioComponent,
+    HorarioComponent,
   ],
 })
 export class UicomponentsModule {}
