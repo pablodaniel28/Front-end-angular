@@ -14,13 +14,11 @@ export class SistemasacademicosService {
 
   async getAllSistemasacademicos(token: string): Promise<Sistemasacademicos[]> {
     const url = `${this.BASE_URL}/sistemasacademicos`;
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
+    const headers = new HttpHeaders({ 'Authorization': `Bearer ${token}` });
     const response = await this.http.get<Sistemasacademicos[]>(url, { headers }).toPromise();
-    return response || []; // Ensure the response is not undefined
+    console.log('Sistemas academicos recibidos:', response); // Verificar los datos aquí
+    return response || []; // Asegúrate de devolver un array vacío en caso de que la respuesta sea undefined
   }
-
   async guardarSistemaacademico(sistemaacademico: Sistemasacademicos, token: string): Promise<any> {
     const url = `${this.BASE_URL}/sistemasacademicos`;
     const headers = new HttpHeaders({
