@@ -24,7 +24,7 @@ export class FacultadesService {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.http.get<Facultad>(`${this.BASE_URL}/${id}`, { headers });
+    return this.http.get<Facultad>(`${this.BASE_URL}/facultades/${id}`, { headers });
   }
 
   guardarFacultad(facultad: Facultad, token: string): Observable<Facultad> {
@@ -32,7 +32,7 @@ export class FacultadesService {
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'
     });
-    return this.http.post<Facultad>(this.BASE_URL, facultad, { headers });
+    return this.http.post<Facultad>(`${this.BASE_URL}/facultades`, facultad, { headers });
   }
 
   actualizarFacultad(id: number, facultad: Facultad, token: string): Observable<Facultad> {
@@ -40,13 +40,13 @@ export class FacultadesService {
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'
     });
-    return this.http.put<Facultad>(`${this.BASE_URL}/${id}`, facultad, { headers });
+    return this.http.put<Facultad>(`${this.BASE_URL}/facultades/${id}`, facultad, { headers });
   }
 
   eliminarFacultad(id: number, token: string): Observable<void> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.http.delete<void>(`${this.BASE_URL}/${id}`, { headers });
+    return this.http.delete<void>(`${this.BASE_URL}/facultades/${id}`, { headers });
   }
 }
