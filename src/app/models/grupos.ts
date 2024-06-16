@@ -24,4 +24,11 @@ export interface Grupos {
     id: number;
     nombre: string;
   };
+  horario : {
+    id: number;
+    dia: string;
+    horainicio: string;
+    horafin: string;
+  }
+
 }

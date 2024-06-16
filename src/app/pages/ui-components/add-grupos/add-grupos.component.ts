@@ -11,6 +11,8 @@ import { Materias } from 'src/app/models/materias';
 import { Sistemasacademicos } from 'src/app/models/sistemasacademicos';
 import { UsersService } from 'src/app/users.service';
 import { usuarios } from 'src/app/models/usuarios';
+import { Horario } from 'src/app/models/horario';
+import { HorariosService } from 'src/app/horarios.service';
 
 @Component({
   selector: 'app-add-grupos',
@@ -24,12 +26,16 @@ export class AddGruposComponent implements OnInit {
   selectedMateria: number | null = null;
   selectedOurUser: number | null = null;
   selectedSistemaAcademico: number | null = null;
+  selectedHorario: number | null = null;
+
 
   carreras: Carreras[] = [];
   gestiones: Gestiones[] = [];
   materias: Materias[] = [];
   users: usuarios[] = [];// Lista para almacenar los usuarios
   sistemasAcademicos: Sistemasacademicos[] = [];
+  horarios: Horario[] = [];
+
   token: string = '';
 
   constructor(
@@ -39,7 +45,8 @@ export class AddGruposComponent implements OnInit {
     private gestionService: GestionesService,
     private materiaService: MateriasService,
     private sistemasAcademicosService: SistemasacademicosService,
-    private location: Location
+    private location: Location,
+    private horariosService: HorariosService
   ) { }
 
   ngOnInit(): void {
@@ -48,6 +55,8 @@ export class AddGruposComponent implements OnInit {
     this.loadMaterias();
     this.loadUsers();
     this.loadSistemasAcademicos();
+    this.loadHorarios();
+
   }
 
 
@@ -135,6 +144,19 @@ export class AddGruposComponent implements OnInit {
     );
   }
 
+  loadHorarios(): void {
+    const token = localStorage.getItem('token') || '';
+    this.horariosService.getAllHorarios(token).then(
+      (data: Horario[]) => {
+        this.horarios = data;
+        console.log('Sistemas Academicos cargados:', this.horarios); // Verificar los datos aquí
+      },
+      (error) => {
+        console.error('Error al cargar sistemas academicos:', error);
+      }
+    );
+  }
+
 
   async guardarGrupo(): Promise<void> {
     try {
@@ -143,7 +165,8 @@ export class AddGruposComponent implements OnInit {
         this.selectedGestion !== null &&
         this.selectedMateria !== null &&
         this.selectedOurUser !== null &&
-        this.selectedSistemaAcademico !== null
+        this.selectedSistemaAcademico !== null &&
+        this.selectedHorario !== null
       ) {
         const grupoData = {
           nombre: this.nombre,
@@ -152,7 +175,8 @@ export class AddGruposComponent implements OnInit {
           gestion: { id: this.selectedGestion },
           materia: { id: this.selectedMateria },
           ourUsers: { id: this.selectedOurUser },
-          sistemaacademico: { id: this.selectedSistemaAcademico }
+          sistemaacademico: { id: this.selectedSistemaAcademico },
+          horario: { id: this.selectedHorario }
         };
         const token = localStorage.getItem('token') || '';
         const response = await this.grupoService.createGrupo(grupoData, token);
