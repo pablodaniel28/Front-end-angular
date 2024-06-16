@@ -2,6 +2,7 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { NavItem } from './nav-item';
 import { Router } from '@angular/router';
 import { NavService } from '../../../../services/nav.service';
+import { UsersService } from 'src/app/users.service';
 
 @Component({
   selector: 'app-nav-item',
@@ -12,7 +13,11 @@ export class AppNavItemComponent implements OnChanges {
   @Input() item: NavItem | any;
   @Input() depth: any;
 
-  constructor(public navService: NavService, public router: Router) {
+  constructor(
+    public navService: NavService,
+    public router: Router,
+    private userService: UsersService // Inyecta el servicio UsersService
+  ) {
     if (this.depth === undefined) {
       this.depth = 0;
     }
@@ -23,6 +28,11 @@ export class AppNavItemComponent implements OnChanges {
       if (this.item.route && url) {
       }
     });
+  }
+
+
+  isAdmin(): boolean {
+    return this.userService.isAdmin(); // Método para verificar si el usuario es administrador
   }
 
   onItemSelected(item: NavItem) {

@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Carreras } from './models/carreras';
+import { environment } from './env';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarrerasService {
 
-  private BASE_URL = "http://localhost:8080/carreras";
+  private BASE_URL = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   async getAllCarreras(token: string): Promise<Carreras[]> {
-    const url = `${this.BASE_URL}`;
+    const url = `${this.BASE_URL}/carreras`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -22,7 +23,7 @@ export class CarrerasService {
   }
 
   async createCarrera(carreraData: { nro: string; nombre: string; facultad: { id: number}; }, token: string): Promise<Carreras> {
-    const url = `${this.BASE_URL}`;
+    const url = `${this.BASE_URL}/carreras`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -38,7 +39,7 @@ export class CarrerasService {
   }
 
   async updateCarrera(id: number, carreraData: { nro: string; nombre: string; facultad: { id: number}; }, token: string): Promise<Carreras> {
-    const url = `${this.BASE_URL}/${id}`;
+    const url = `${this.BASE_URL}/carreras/${id}`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });

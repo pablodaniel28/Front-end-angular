@@ -3,13 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Aulas } from './models/aulas';
 import { Observable } from 'rxjs';
 import { Aulas2 } from './models/aulas2';
+import { environment } from './env';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AulasService {
 
-  private BASE_URL = "http://localhost:8080";
+  private BASE_URL = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 

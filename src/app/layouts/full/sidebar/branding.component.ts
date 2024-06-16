@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
 
 <div class="branding text-center">
-  <a href="/" class="d-inline-block align-middle text-decoration-none text-dark">
+  <a  href="/" class="d-inline-block align-middle text-decoration-none text-dark">
     <img src="./assets/images/logos/favicon.png" class="m-2 align-middle" alt="logo" />
     <div class="d-inline-block align-middle" style="margin-left: 12px;">
       <span style="font-size: 18px; font-weight: bold; vertical-align: middle; color: black;">SISTEMA</span>

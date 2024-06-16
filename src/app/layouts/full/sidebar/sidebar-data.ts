@@ -16,11 +16,13 @@ export const navItems: NavItem[] = [
     displayName: 'Horario',
     iconName: 'rosette',
     route: '/ui-components/horario',
+    adminOnly: true,
   },
   {
     displayName: 'Asistencia',
     iconName: 'rosette',
     route: '/ui-components/asistencia',
+    adminOnly: true,
   },
   {
     displayName: 'Materia',

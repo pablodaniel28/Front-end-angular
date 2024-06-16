@@ -10,12 +10,8 @@
       : false,
   }"
   class="menu-list-item"
-  *ngIf="!item.navCap"
+  *ngIf="!item.navCap && (!item.adminOnly || (item.adminOnly && isAdmin()))"
 >
-  <i-tabler
-    class="routeIcon"
-    name="{{ item.iconName }}"
-    matListItemIcon
-  ></i-tabler>
+  <i-tabler class="routeIcon" name="{{ item.iconName }}" matListItemIcon></i-tabler>
   <span class="hide-menu">{{ item.displayName }}</span>
 </a>

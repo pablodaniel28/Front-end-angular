@@ -4,17 +4,18 @@ import { Observable } from 'rxjs';
 import { Horario } from './models/horario';
 import { Aulas2 } from './models/aulas2';
 import { Time } from '@angular/common';
+import { environment } from './env';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HorariosService {
-  private BASE_URL = "http://localhost:8080/horarios";
+  private BASE_URL = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   async getAllHorarios(token: string): Promise<Horario[]> {
-    const url = `${this.BASE_URL}`; // Asegúrate de apuntar a la URL correcta
+    const url = `${this.BASE_URL}/horarios`; // Asegúrate de apuntar a la URL correcta
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -30,7 +31,7 @@ export class HorariosService {
   }
 
   async createHorario(horarioData: { dia: string; horainicio: string; horafin: string; aula: { id: number } }, token: string): Promise<Horario> {
-    const url = `${this.BASE_URL}`;
+    const url = `${this.BASE_URL}/horarios`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'

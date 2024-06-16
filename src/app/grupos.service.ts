@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Grupos } from './models/grupos';
+import { environment } from './env';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GruposService {
 
-  private BASE_URL = "http://localhost:8080/grupos";
+  private BASE_URL = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   async getAllGrupos(token: string): Promise<Grupos[]> {
-    const url = `${this.BASE_URL}`;
+    const url = `${this.BASE_URL}/grupos`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -30,7 +31,7 @@ export class GruposService {
     ourUsers: { id: number };
     sistemaacademico: { id: number }
   }, token: string): Promise<Grupos> {
-    const url = `${this.BASE_URL}`;
+    const url = `${this.BASE_URL}/grupos`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -53,7 +54,7 @@ export class GruposService {
     ourUsers: { id: number };
     sistemaacademico: { id: number }
   }, token: string): Promise<Grupos> {
-    const url = `${this.BASE_URL}/${id}`;
+    const url = `${this.BASE_URL}/grupos/${id}`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });

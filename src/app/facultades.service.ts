@@ -2,20 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Facultad } from './models/facultad';
+import { environment } from './env';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacultadesService {
-  private BASE_URL = 'http://localhost:8080/facultades';
+  private BASE_URL = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   getAllFacultades(token: string): Observable<Facultad[]> {
+    const url = `${this.BASE_URL}/facultades`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.http.get<Facultad[]>(this.BASE_URL, { headers });
+    return this.http.get<Facultad[]>(url, { headers });
   }
 
   getFacultadById(id: number, token: string): Observable<Facultad> {
