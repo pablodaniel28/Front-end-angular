@@ -8,6 +8,11 @@
     <a class="btn btn-primary mb-3" routerLink="/authentication/register">
       Agregar
     </a>
+    <div class="mb-3 d-flex align-items-center justify-content-between">
+      <input type="text" class="form-control" [(ngModel)]="searchTerm" (input)="applyFilters()" placeholder="Buscar por nombre o rol...">
+    </div>
+
+
     <div class="modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -44,7 +49,7 @@
           <td scope="row">{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
-          <td>{{ user.role === 'USER' ? 'DOCENTE' : user.role }}</td>
+          <td>{{ user.role}}</td>
           <td>
             <a [routerLink]="['/ui-components/admin/update']" [queryParams]="{ id: user.id }" class="btn btn-primary btn-sm me-1" title="Editar">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">

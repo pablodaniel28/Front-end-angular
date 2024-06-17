@@ -30,7 +30,6 @@ export class GruposService {
     materia: { id: number };
     ourUsers: { id: number };
     sistemaacademico: { id: number };
-    horario:{id: number}
   }, token: string): Promise<Grupos> {
     const url = `${this.BASE_URL}/grupos`;
     const headers = new HttpHeaders({
@@ -45,7 +44,20 @@ export class GruposService {
       throw error;
     }
   }
+  async deleteGrupo(id: number, token: string): Promise<void> {
+    const url = `${this.BASE_URL}/grupos/${id}`;
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
 
+    try {
+      await this.http.delete(url, { headers }).toPromise();
+      console.log(`Grupo con id ${id} eliminado.`);
+    } catch (error) {
+      console.error(`Error deleting grupo with id ${id}:`, error);
+      throw error;
+    }
+  }
   async updateGrupo(id: number, grupoData: {
     nombre: string;
     cupo: string;
@@ -54,7 +66,6 @@ export class GruposService {
     materia: { id: number };
     ourUsers: { id: number };
     sistemaacademico: { id: number };
-    horario:{id: number}
   }, token: string): Promise<Grupos> {
     const url = `${this.BASE_URL}/grupos/${id}`;
     const headers = new HttpHeaders({
@@ -66,6 +77,21 @@ export class GruposService {
       return response as Grupos;
     } catch (error) {
       console.error('Error updating grupo:', error);
+      throw error;
+    }
+  }
+
+  async getGrupoById(id: number, token: string): Promise<Grupos> {
+    const url = `${this.BASE_URL}/grupos/${id}`;
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    try {
+      const response = await this.http.get<any>(url, { headers }).toPromise();
+      return response as Grupos;
+    } catch (error) {
+      console.error(`Error fetching grupo with id ${id}:`, error);
       throw error;
     }
   }

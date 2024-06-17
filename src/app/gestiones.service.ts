@@ -18,36 +18,42 @@ export class GestionesService {
       'Authorization': `Bearer ${token}`
     });
 
-    const response = await this.http.get<Gestiones[]>(url, { headers }).toPromise();
-    return response || [];
+    try {
+      const response = await this.http.get<Gestiones[]>(url, { headers }).toPromise();
+      return response || [];
+    } catch (error) {
+      console.error('Error fetching gestiones:', error);
+      throw error;
+    }
   }
 
-  async createGestion(gestionData: { nro: string; nombre: string; facultad: { id: number}; }, token: string): Promise<Gestiones> {
+  async createGestion(gestionData: { nombre: string }, token: string): Promise<Gestiones> {
     const url = `${this.BASE_URL}/gestiones`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
 
     try {
-      const response = await this.http.post<any>(url, gestionData, { headers }).toPromise();
+      const response = await this.http.post<Gestiones>(url, gestionData, { headers }).toPromise();
       return response as Gestiones;
     } catch (error) {
-      console.error('Error creating gestion:', error);
-      throw error;
+      console.error('Error creating gestion:', error); // Aquí se muestra el error en la consola
+      throw error; // Lanza el error para que sea manejado en el componente que llama a este método
     }
   }
 
-  async updateGestion(id: number, gestionData: { nro: string; nombre: string; facultad: { id: number}; }, token: string): Promise<Gestiones> {
+
+  async deleteGestion(id: number, token: string): Promise<void> {
     const url = `${this.BASE_URL}/gestiones/${id}`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
 
     try {
-      const response = await this.http.put<any>(url, gestionData, { headers }).toPromise();
-      return response as Gestiones;
+      await this.http.delete(url, { headers }).toPromise();
+      console.log(`Gestión con ID ${id} eliminada correctamente`);
     } catch (error) {
-      console.error('Error updating gestion:', error);
+      console.error(`Error deleting gestion with ID ${id}:`, error);
       throw error;
     }
   }

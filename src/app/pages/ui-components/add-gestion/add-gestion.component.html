@@ -1,0 +1,16 @@
+<!-- add-gestion.component.html -->
+
+<div class="container">
+  <h2>Agregar Nueva Gestión</h2>
+  <form (ngSubmit)="onSubmit()" #gestionForm="ngForm">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" required
+             [(ngModel)]="gestionData.nombre" #nombre="ngModel">
+      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert alert-danger">
+        <div *ngIf="nombre.errors?.['required']">Nombre es requerido.</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="gestionForm.invalid">Agregar</button>
+  </form>
+</div>

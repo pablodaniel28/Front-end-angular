@@ -1,1 +1,50 @@
-<p>up-grupos works!</p>
+<h4>Editar Grupo</h4>
+<div class="container">
+  <form (ngSubmit)="updateGrupo()">
+    <div class="form-group mb-2">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input [(ngModel)]="nombre" type="text" class="form-control" id="nombre" name="nombre" required>
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="cupo" class="form-label">Cupo</label>
+      <input [(ngModel)]="cupo" type="number" class="form-control" id="cupo" name="cupo" required>
+    </div>
+    <div class="form-group mb-2">
+      <label for="modulo" class="form-label">Materia</label>
+      <select [(ngModel)]="selectedMateria" class="form-control" id="materia" name="materia" required>
+        <option *ngFor="let materia of materias" [value]="materia.id">{{ materia.nombre }}</option>
+      </select>
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="sistemaacademico" class="form-label">Sistema Academico</label>
+      <select [(ngModel)]="selectedSistemaAcademico" class="form-control" id="sistemaacademico" name="sistemaacademico" required style="color: black;">
+        <option *ngFor="let sistemaacademico of sistemasAcademicos" [value]="sistemaacademico.id">{{ sistemaacademico.nombre }}</option>
+      </select>
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="carrera" class="form-label">Carrera</label>
+      <select [(ngModel)]="selectedCarrera" class="form-control" id="carrera" name="carrera" required>
+        <option *ngFor="let carrera of carreras" [value]="carrera.id">{{ carrera.nombre }}</option>
+      </select>
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="gestion" class="form-label">Gestion</label>
+      <select [(ngModel)]="selectedGestion" class="form-control" id="gestion" name="gestion" required>
+        <option *ngFor="let gestion of gestiones" [value]="gestion.id">{{ gestion.nombre }}</option>
+      </select>
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="user" class="form-label">User</label>
+      <select [(ngModel)]="selectedOurUser" class="form-control" id="user" name="user" required>
+        <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+</div>

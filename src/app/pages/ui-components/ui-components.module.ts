@@ -41,6 +41,8 @@ import { AddAsistenciaComponent } from './add-asistencia/add-asistencia.componen
 import { AddHorarioComponent } from './add-horario/add-horario.component';
 import { HorarioComponent } from './horario/horario.component';
 import { AddGruposComponent } from './add-grupos/add-grupos.component';
+import { GestionComponent } from './gestion/gestion.component';
+import { AddGestionComponent } from './add-gestion/add-gestion.component';
 
 
 @NgModule({
@@ -79,7 +81,7 @@ import { AddGruposComponent } from './add-grupos/add-grupos.component';
     GruposComponent,
 
     AddGruposComponent,
-    //UpGruposComponent,
+    UpGruposComponent,
 
     AsistenciaComponent,
     AddAsistenciaComponent,
@@ -87,6 +89,8 @@ import { AddGruposComponent } from './add-grupos/add-grupos.component';
     HorarioComponent,
     AddGruposComponent,
     UpUsuarioComponent,
+    GestionComponent,
+    AddGestionComponent,
 
   ],
 })

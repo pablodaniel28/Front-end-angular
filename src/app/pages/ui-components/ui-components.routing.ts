@@ -33,6 +33,8 @@ import { HorarioComponent } from './horario/horario.component';
 import { AddHorarioComponent } from './add-horario/add-horario.component';
 import { AddGruposComponent } from './add-grupos/add-grupos.component';
 import { AdminGuard } from 'src/app/AdminGuard';
+import { GestionComponent } from './gestion/gestion.component';
+import { AddGestionComponent } from './add-gestion/add-gestion.component';
 
 
 
@@ -160,6 +162,14 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'addhorario',
         component: AddHorarioComponent,
+      },
+      {
+        path: 'gestiones',
+        component: GestionComponent,
+      },
+      {
+        path: 'addgestiones',
+        component: AddGestionComponent,
       },
 
     ],
