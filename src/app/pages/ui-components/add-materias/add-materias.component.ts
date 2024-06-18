@@ -12,6 +12,7 @@ export class AddMateriasComponent implements OnInit {
   id: number = 0;
   nombre: string = '';
   sigla: string = '';
+  semestre: string = '';
   materias: Materias[] = []; // Variable para almacenar las materias
 
   constructor(private materiasService: MateriasService, private location: Location) { }
@@ -31,7 +32,7 @@ export class AddMateriasComponent implements OnInit {
 
   async guardarMateria() {
     try {
-      const materia: Materias = { id: this.id, nombre: this.nombre, sigla: this.sigla };
+      const materia: Materias = { id: this.id, nombre: this.nombre, sigla: this.sigla, semestre: this.semestre };
       const token = localStorage.getItem('token') || ''; // Obtén el token desde el localStorage
       await this.materiasService.guardarMateria(materia, token); // Guarda la materia utilizando el servicio
       // Vuelve a cargar las materias después de guardar

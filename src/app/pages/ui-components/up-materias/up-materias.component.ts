@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 export class UpMateriasComponent implements OnInit {
   id: number = 0;
   nombre: string = '';
+  semestre: string = '';
   sigla: string = '';
 
   constructor(
@@ -37,6 +38,7 @@ export class UpMateriasComponent implements OnInit {
       if (materia) {
         this.nombre = materia.nombre;
         this.sigla = materia.sigla;
+        this.semestre = materia.semestre;
       } else {
         console.error('No se encontró la materia con el ID especificado.');
       }
@@ -48,7 +50,7 @@ export class UpMateriasComponent implements OnInit {
   async editarMateria() {
     try {
       const token = localStorage.getItem('token') || '';
-      const materia: Materias = { id: this.id, nombre: this.nombre, sigla: this.sigla };
+      const materia: Materias = { id: this.id, nombre: this.nombre, sigla: this.sigla, semestre: this.semestre  };
       await this.materiasService.editarMateria(materia, token);
       this.location.back();
     } catch (error) {

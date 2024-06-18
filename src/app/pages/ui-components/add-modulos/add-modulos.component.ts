@@ -10,6 +10,8 @@ import { Location } from '@angular/common';
 })
 export class AddModulosComponent implements OnInit {
   id: number = 0;
+  latitud: number = 0;
+  longitud: number = 0;
   nombre: string = '';
   nro: string = '';
   modulos: Modulos[] = []; // Variable para almacenar los modulos
@@ -31,7 +33,7 @@ export class AddModulosComponent implements OnInit {
 
   async guardarModulo() {
     try {
-      const modulo: Modulos = { id: this.id, nombre: this.nombre, nro: this.nro };
+      const modulo: Modulos = { id: this.id, nombre: this.nombre, nro: this.nro, latitud: this.latitud, longitud: this.longitud};
       const token = localStorage.getItem('token') || ''; // Obtén el token desde el localStorage
       await this.modulosService.guardarModulo(modulo, token); // Guarda el modulo utilizando el servicio
       // Vuelve a cargar los modulos después de guardar

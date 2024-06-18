@@ -36,6 +36,7 @@
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Sigla</th>
+            <th scope="col">Semestre</th>
 
             <th scope="col">Acciones</th>
           </tr>
@@ -45,6 +46,7 @@
             <th scope="row">{{ materia.id }}</th>
             <td>{{ materia.nombre }}</td>
             <td>{{ materia.sigla }}</td>
+            <td>{{ materia.semestre }}</td>
             <td>
               <a [routerLink]="['/ui-components/upmaterias']" [queryParams]="{ id: materia.id }" class="btn btn-primary btn-sm me-1" title="Editar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">

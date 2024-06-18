@@ -16,6 +16,8 @@ export class UpModulosComponent implements OnInit {
   id: number = 0;
   nombre: string = '';
   nro: string = '';
+  latitud: number = 0;
+  longitud: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -48,7 +50,7 @@ export class UpModulosComponent implements OnInit {
   async editarModulo() {
     try {
       const token = localStorage.getItem('token') || '';
-      const modulo: Modulos = { id: this.id, nombre: this.nombre, nro: this.nro };
+      const modulo: Modulos = { id: this.id, nombre: this.nombre, nro: this.nro, latitud: this.latitud, longitud: this.longitud};
       await this.modulosService.editarModulo(modulo, token);
       this.location.back();
     } catch (error) {

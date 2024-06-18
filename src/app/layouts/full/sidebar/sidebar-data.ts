@@ -2,16 +2,17 @@ import { NavItem } from './nav-item/nav-item';
 
 export const navItems: NavItem[] = [
   {
-    navCap: 'Home',
+    navCap: 'Menu',
   },
   {
-    displayName: 'Dashboard',
+    displayName: 'Bienvenida',
     iconName: 'layout-dashboard',
     route: '/dashboard',
   },
-  {
-    navCap: 'Administracion',
-  },
+  // {
+  //   displayName: 'Administracion',
+  //   adminOnly: true,
+  // },
 
   {
     displayName: 'Asistencia',
