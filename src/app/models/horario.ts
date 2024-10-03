@@ -7,4 +7,8 @@ export interface Horario {
     id: number;
     nombre: string;
   };
+  grupo: {
+    id: number;
+    nombre: string;
+  };
 }

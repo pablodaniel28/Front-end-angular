@@ -42,7 +42,6 @@ export class GestionesService {
     }
   }
 
-
   async deleteGestion(id: number, token: string): Promise<void> {
     const url = `${this.BASE_URL}/gestiones/${id}`;
     const headers = new HttpHeaders({
@@ -50,12 +49,11 @@ export class GestionesService {
     });
 
     try {
-      await this.http.delete(url, { headers }).toPromise();
-      console.log(`Gestión con ID ${id} eliminada correctamente`);
+      await this.http.delete<void>(url, { headers }).toPromise();
+      console.log('Gestión eliminada correctamente');
     } catch (error) {
-      console.error(`Error deleting gestion with ID ${id}:`, error);
+      console.error('Error eliminando gestión:', error);
       throw error;
     }
   }
-
 }

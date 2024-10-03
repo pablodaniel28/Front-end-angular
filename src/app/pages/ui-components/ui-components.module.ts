@@ -43,6 +43,8 @@ import { HorarioComponent } from './horario/horario.component';
 import { AddGruposComponent } from './add-grupos/add-grupos.component';
 import { GestionComponent } from './gestion/gestion.component';
 import { AddGestionComponent } from './add-gestion/add-gestion.component';
+import { UpHorarioComponent } from './up-horario/up-horario.component';
+import { LicenciaComponent } from './licencia/licencia.component';
 
 
 @NgModule({
@@ -87,11 +89,12 @@ import { AddGestionComponent } from './add-gestion/add-gestion.component';
     AddAsistenciaComponent,
     AddHorarioComponent,
     HorarioComponent,
+    UpHorarioComponent,
     AddGruposComponent,
     UpUsuarioComponent,
     GestionComponent,
     AddGestionComponent,
-
+    LicenciaComponent,
   ],
 })
 export class UicomponentsModule {}

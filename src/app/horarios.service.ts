@@ -30,7 +30,7 @@ export class HorariosService {
     }
   }
 
-  async createHorario(horarioData: { dia: string; horainicio: string; horafin: string; aula: { id: number } }, token: string): Promise<Horario> {
+  async createHorario(horarioData: { dia: string; horainicio: string; horafin: string; aula: { id: number }; grupo: { id: number } }, token: string): Promise<Horario> {
     const url = `${this.BASE_URL}/horarios`;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`,
@@ -39,9 +39,56 @@ export class HorariosService {
 
     try {
       const response = await this.http.post<Horario>(url, horarioData, { headers }).toPromise();
-      return response as Horario; // Asegurar que la respuesta sea del tipo Horario
+      return response as Horario;
     } catch (error) {
       console.error('Error creating horario:', error);
+      throw error;
+    }
+  }
+
+
+  async getHorarioById(id: number, token: string): Promise<Horario> {
+    const url = `${this.BASE_URL}/horarios/${id}`;
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    try {
+      const response = await this.http.get<Horario>(url, { headers }).toPromise();
+      return response as Horario;
+    } catch (error) {
+      console.error('Error fetching horario:', error);
+      throw error;
+    }
+  }
+
+  async updateHorario(id: number, horarioData: { dia: string; horainicio: string; horafin: string; aula: { id: number }; grupo: { id: number } }, token: string): Promise<Horario> {
+    const url = `${this.BASE_URL}/horarios/${id}`;
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    });
+
+    try {
+      const response = await this.http.put<Horario>(url, horarioData, { headers }).toPromise();
+      return response as Horario;
+    } catch (error) {
+      console.error('Error updating horario:', error);
+      throw error;
+    }
+  }
+
+  async deleteHorario(id: number, token: string): Promise<void> {
+    const url = `${this.BASE_URL}/horarios/${id}`;
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    try {
+      await this.http.delete<void>(url, { headers }).toPromise();
+      console.log('Horario eliminado correctamente');
+    } catch (error) {
+      console.error('Error deleting horario:', error);
       throw error;
     }
   }

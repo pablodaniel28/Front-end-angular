@@ -35,6 +35,8 @@ import { AddGruposComponent } from './add-grupos/add-grupos.component';
 import { AdminGuard } from 'src/app/AdminGuard';
 import { GestionComponent } from './gestion/gestion.component';
 import { AddGestionComponent } from './add-gestion/add-gestion.component';
+import { UpHorarioComponent } from './up-horario/up-horario.component';
+import { LicenciaComponent } from './licencia/licencia.component';
 
 
 
@@ -170,6 +172,14 @@ export const UiComponentsRoutes: Routes = [
       {
         path: 'addgestiones',
         component: AddGestionComponent,
+      },
+      {
+        path: 'uphorarios',
+        component: UpHorarioComponent,
+      },
+      {
+        path: 'licencias',
+        component: LicenciaComponent,
       },
 
     ],

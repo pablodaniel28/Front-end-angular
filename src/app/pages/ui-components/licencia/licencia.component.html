@@ -1,0 +1,43 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Licencias</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <div class="mb-3 d-flex align-items-center justify-content-between">
+      <input type="date" class="form-control" id="fechainicio" name="fechainicio" [(ngModel)]="fechaInicio" (change)="applyFilter()">
+      <input type="date" class="form-control" id="fechafin" name="fechafin" [(ngModel)]="fechaFin" (change)="applyFilter()">
+    </div>
+    <div class="d-flex mb-3">
+      <button class="btn btn-danger btn-sm" title="PDF" (click)="imprimirPdf()">
+        PDF
+      </button>
+      <button class="btn btn-info btn-sm ml-2" title="Excel" (click)="exportToExcel()">
+        Excel
+      </button>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Grupo</th>
+            <th scope="col">Usuario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let l of filteredLic">
+            <td>{{ l.id }}</td>
+            <td>{{ l.descripcion }}</td>
+            <td>{{ l.hora }}</td>
+            <td>{{ l.fecha }}</td>
+            <td>{{ l.grupo.nombre }}</td>
+            <td>{{ l.ourUsers.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

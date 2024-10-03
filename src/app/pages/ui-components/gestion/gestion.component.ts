@@ -33,15 +33,16 @@ export class GestionComponent implements OnInit {
     this.router.navigate(['/ui-components/editgestion', id]);
   }
 
-  // async eliminarGestion(id: number) {
-  //   try {
-  //     const token = ''; // Obtén el token de autenticación según tu implementación
-  //     await this.gestionesService.deleteGestion(id, token);
-  //     this.gestiones = this.gestiones.filter(gestion => gestion.id !== id);
-  //     console.log(`Gestión ${id} eliminada correctamente`);
-  //   } catch (error) {
-  //     console.error(`Error al eliminar la gestión ${id}:`, error); // Maneja los errores al eliminar la gestión
-  //   }
-  // }
+
+  async deleteGestion(id: number): Promise<void> {
+    const token = localStorage.getItem('token') || '';
+    try {
+      await this.gestionesService.deleteGestion(id, token);
+      this.gestiones = this.gestiones.filter(gestion => gestion.id !== id);
+      console.log('Gestión eliminada');
+    } catch (error) {
+      console.error('Error eliminando gestión:', error);
+    }
+  }
 
 }

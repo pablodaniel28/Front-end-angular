@@ -33,6 +33,12 @@ export const navItems: NavItem[] = [
     adminOnly: true,
   },
   {
+    displayName: 'Licencias',
+    iconName: 'rosette',
+    route: '/ui-components/licencias',
+    adminOnly: true,
+  },
+  {
     displayName: 'Materia',
     iconName: 'layout-navbar-expand',
     route: '/ui-components/badge',
